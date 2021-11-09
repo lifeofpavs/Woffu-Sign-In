@@ -30,7 +30,7 @@ class UserData
   end
 
   def read_user_data
-    return read_user_data if File.exists?(FILE_NAME)
+    return read_user_data_from_file if File.exists?(FILE_NAME)
 
     [ENV['username'], ENV['password']]
   end
