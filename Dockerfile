@@ -31,7 +31,7 @@ ENV DISPLAY=:99
 
 RUN apt-get update -qq
 WORKDIR /usr/src/app
-COPY Gemfile* /usr/src/app
+COPY Gemfile* /usr/src/app/
 RUN bundle install
 
 COPY . .

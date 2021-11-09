@@ -30,6 +30,12 @@ class UserData
   end
 
   def read_user_data
+    return read_user_data if File.exists?(FILE_NAME)
+
+    [ENV['username'], ENV['password']]
+  end
+
+  def read_user_data_from_file
     username, password = File.open(FILE_NAME).readlines.map(&:chomp)
     
     [Base64.decode64(username), Base64.decode64(password)]
